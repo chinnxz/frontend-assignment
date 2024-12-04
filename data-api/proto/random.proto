@@ -1,0 +1,27 @@
+syntax  = "proto3";
+
+package randomPackage;
+
+service Random {
+    rpc GetDataByDepartment(Empty) returns (DataResponse) {};
+}
+
+message Empty {}
+
+message Department {
+    int32 male = 1;
+    int32 female = 2;
+    string ageRange = 3;
+    map<string, int32> hair = 4;
+    map<string, string> addressUser = 5;
+}
+
+message DataResponse {
+    map<string, Department> data = 1;
+}
+
+
+
+
+
+
